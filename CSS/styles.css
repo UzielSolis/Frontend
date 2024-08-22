@@ -1,67 +1,66 @@
 :root {
-    --main-bg-color: lightblue;
-    --header-height: 80px;
+  --main-bg-color: lightblue;
+  --header-height: 80px;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 header ul {
-    margin: 0;
-    list-style: none;
-    height: 80px;
+  margin: 0;
+  list-style: none;
+  height: 80px;
 
-    li {
-        display: inline-block;
-        width: 100px;
+  li {
+    display: inline-block;
+    width: 100px;
 
-        &:has(a.active) {
-            background-color: lightcoral;
-        }
-
-        a {
-            line-height: 80px;
-            display: block;
-            text-align: center;
-
-            &:hover {
-                background-color: var(--main-bg-color);
-            }
-        }
+    &:has(a.active) {
+      background-color: lightcoral;
     }
+
+    a {
+      line-height: 80px;
+      display: block;
+      text-align: center;
+
+      &:hover {
+        background-color: var(--main-bg-color);
+      }
+    }
+  }
 }
 
 .banner {
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-color: var(--main-bg-color);
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: var(--main-bg-color);
 }
 
 .gallery > div {
-    height: 200px;
-    background-color: lightgreen;
-    width: 25%;
-    float: left;
-    border: solid 1px green;
-    box-sizing: border-box;
+  height: 200px;
+  background-color: lightgreen;
+  width: 25%;
+  float: left;
+  border: solid 1px green;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 800px) {
-    .gallery > div {
-        width: 50%;
-    }
+  .gallery > div {
+    width: 50%;
+  }
 }
 
 .gallery::after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 @media screen and (max-width: 600px) {
-    .gallery > div {
-        width: 100%;
-    }
+  .gallery > div {
+    width: 100%;
+  }
 }
-
