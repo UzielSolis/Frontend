@@ -1,2 +1,16 @@
-<h1>Hola {{nombre}}</h1>
-<button (click)="doOnClick($event)">Click me!</button>
+<app-header></app-header>
+<main>
+    <h1>Hola {{nombre}}</h1>
+    <button>Click me!</button>
+
+    @if(peliculas.length) {
+        <h2>Lista de peliculas</h2>
+        <!-- Lista de peliculas -->
+        <ul>
+            @for (peli of peliculas; track $index) {
+                <li>{{peli}}</li>
+            }
+        </ul>
+    }
+</main>
+<app-footer></app-footer>
