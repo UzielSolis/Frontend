@@ -1,1 +1,11 @@
 <p>movie-list works!</p>
+<button mat-flat-button>Click me!</button>
+
+<form (submit)="submit()">
+    <mat-form-field>
+        <mat-label>Movie Title</mat-label>
+        <input type="text" matInput name="title" required="">
+        <mat-error>Movie title is required</mat-error>
+    </mat-form-field>
+    <button (click)="submit()" mat-flat-button>Enviar</button>
+</form>
