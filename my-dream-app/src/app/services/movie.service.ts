@@ -1,29 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../types/movie';
+import { environment } from '../../environments/environment.development';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
+  
+  constructor(private httpClient: HttpClient) { }
 
-  private movies: Movie[] = [
-    {
-      id: 1,
-      title: 'shrek 1'
-    },
-    {
-      id: 2,
-      title: 'shrek 2'
-    },
-    {
-      id: 3,
-      title: 'shrek 3'
-    }
-  ];
-
-  constructor() { }
-
-  getAll(): Movie[] {
-    return this.movies;
+  getAll(): Observable<Movie[]> {
+    const url = `${environment.apiUrl}posts`;
+    return this.httpClient.get<Movie[]>(url);
   }
 }
