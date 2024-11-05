@@ -10,4 +10,7 @@
 <mat-toolbar>
     <span>My Application</span>
     <span>Clicks: {{counter}}</span>
+    
+    <a routerLink="/login" *appAuthState="false">Log in</a>
+    <a routerLink="/login" *appAuthState="true">Log out</a>
 </mat-toolbar>
