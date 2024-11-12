@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Socket } from 'dgram';
+import { Rooms } from '../../../types/rooms';
 
 @Component({
   selector: 'app-chat',
@@ -8,5 +10,12 @@ import { Component } from '@angular/core';
   styleUrl: './chat.component.scss'
 })
 export class ChatComponent {
+
+  message: string = '';
+  socket: Socket | undefined;
+  roomId: string = '';
+  rooms: Rooms[] = [];
+
+  constructor() {}
 
 }

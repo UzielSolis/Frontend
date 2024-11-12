@@ -1,1 +1,6 @@
-<p>rooms works!</p>
+<h2>Salas</h2>
+@for (room of rooms; track $index) {
+    <div>
+        <a [routerLink]="room.id">{{room.name}}</a>
+    </div>
+}
